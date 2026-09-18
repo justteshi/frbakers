@@ -1,0 +1,3 @@
+import type { Metadata } from 'next';import { SiteShell } from '../SiteShell';import GalleryClient from './GalleryClient';
+export const metadata:Metadata={title:'Gallery',description:'Celebration cakes, flaky pastries and behind-the-scenes moments from the FrBakers kitchen.',alternates:{canonical:'/gallery.html'}};
+export default function GalleryPage(){return <SiteShell active="Gallery"><main id="main"><section className="page-hero gallery-hero"><p className="eyebrow">A feast for the eyes</p><h1>Made by hand, finished with joy</h1><p>Celebration cakes, quiet mornings, buttery layers and the occasional frosting-covered apron.</p></section><section className="gallery-section section"><GalleryClient/></section></main></SiteShell>}
