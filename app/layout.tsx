@@ -37,7 +37,7 @@ export const metadata: Metadata = {
         locale: 'en_US',
         type: 'website',
         images: [{
-            url: '/opengraph-image',
+            url: '/opengraph-image.png',
             width: 1200,
             height: 630,
             alt: 'FrBakers — artisan cakes and pastries'
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
         card: 'summary_large_image',
         title: 'FrBakers — Artisan cakes & pastries',
         description: 'Handcrafted cakes, pastries and little bites of happiness, baked fresh every day.',
-        images: [{url: '/opengraph-image', alt: 'FrBakers — artisan cakes and pastries'}],
+        images: [{url: '/opengraph-image.png', alt: 'FrBakers — artisan cakes and pastries'}],
     },
 };
 
