@@ -2,7 +2,7 @@ export const products = [
     {
         name: 'Strawberry Dream Cake',
         cat: 'Cakes',
-        price: '€48',
+        price: 'From €35',
         desc: 'Vanilla sponge, strawberry compote and cloud-soft cream.',
         img: 'cake-pink.jpg',
         badge: 'Bestseller'
@@ -10,7 +10,7 @@ export const products = [
     {
         name: 'Pistachio Raspberry Tart',
         cat: 'Seasonal',
-        price: '€8.50',
+        price: '€4.90',
         desc: 'Silky pistachio cream, raspberry jewel and crisp sable shell.',
         img: 'tart.jpg',
         badge: 'Seasonal'
@@ -18,7 +18,7 @@ export const products = [
     {
         name: 'Chocolate Cloud Cupcake',
         cat: 'Cupcakes',
-        price: '€4.75',
+        price: '€3.30',
         desc: 'Dark cocoa cake with whipped chocolate ganache.',
         img: 'cupcake.jpg',
         badge: 'Vegetarian'
@@ -26,7 +26,7 @@ export const products = [
     {
         name: 'French Butter Croissant',
         cat: 'Pastries',
-        price: '€4.25',
+        price: '€2.40',
         desc: 'Flaky, deeply golden and made with cultured butter.',
         img: 'croissant.jpg',
         badge: 'Morning favorite'
@@ -34,7 +34,7 @@ export const products = [
     {
         name: 'Vanilla Berry Macarons',
         cat: 'Macarons',
-        price: '€14 / 6',
+        price: '€9 / 6',
         desc: 'Vanilla bean shells with bright berry buttercream.',
         img: 'macarons.jpg',
         badge: 'Gluten-aware'
@@ -42,7 +42,7 @@ export const products = [
     {
         name: 'Salted Caramel Cookies',
         cat: 'Cookies',
-        price: '€12 / 4',
+        price: '€14 / 4',
         desc: 'Brown butter cookies with caramel pools and sea salt.',
         img: 'cookies.jpg',
         badge: 'Bestseller'
@@ -50,7 +50,7 @@ export const products = [
     {
         name: 'Garden Party Cake',
         cat: 'Cakes',
-        price: '€62',
+        price: 'From €42',
         desc: 'Lemon sponge, elderflower cream and pressed florals.',
         img: 'cake-berry.jpg',
         badge: 'Vegetarian'
@@ -58,7 +58,7 @@ export const products = [
     {
         name: 'Chocolate Truffle Cake',
         cat: 'Cakes',
-        price: '€54',
+        price: 'From €39',
         desc: 'Fudge layers, dark ganache and cocoa curls.',
         img: 'cake-chocolate.jpg',
         badge: 'Rich'
@@ -66,7 +66,7 @@ export const products = [
     {
         name: 'Confetti Birthday Cake',
         cat: 'Cakes',
-        price: '€52',
+        price: 'From €37',
         desc: 'Vanilla funfetti layers with silky pink buttercream.',
         img: 'cake-sprinkle.jpg',
         badge: 'Celebration'
@@ -74,7 +74,7 @@ export const products = [
     {
         name: 'Almond Morning Bun',
         cat: 'Pastries',
-        price: '€4.95',
+        price: '€3.50',
         desc: 'Laminated pastry, almond cream and toasted sugar.',
         img: 'pastries.jpg',
         badge: 'Contains nuts'
@@ -82,7 +82,7 @@ export const products = [
     {
         name: 'Raspberry Danish',
         cat: 'Pastries',
-        price: '€5.25',
+        price: '€3.40',
         desc: 'Buttery pastry, vanilla custard and fresh raspberry.',
         img: 'pastry-table.jpg',
         badge: 'Fresh daily'
@@ -90,7 +90,7 @@ export const products = [
     {
         name: 'Vanilla Rose Cupcake',
         cat: 'Cupcakes',
-        price: '€4.50',
+        price: '€3.20',
         desc: 'Vanilla bean cake with rose-kissed buttercream.',
         img: 'cupcake-vanilla.jpg',
         badge: 'Vegetarian'
@@ -98,7 +98,7 @@ export const products = [
     {
         name: 'Strawberry Swirl Cupcakes',
         cat: 'Cupcakes',
-        price: '€24 / 6',
+        price: '€19 / 6',
         desc: 'Berry cake crowned with strawberry cream.',
         img: 'cupcakes-pink.jpg',
         badge: 'Party box'
@@ -106,7 +106,7 @@ export const products = [
     {
         name: 'Dark Chocolate Chunk',
         cat: 'Cookies',
-        price: '€3.75',
+        price: '€3.20',
         desc: 'Crisp edges, chewy center and generous chocolate.',
         img: 'cookie-stack.jpg',
         badge: 'Bestseller'
@@ -114,7 +114,7 @@ export const products = [
     {
         name: 'Oat & Cranberry Cookie',
         cat: 'Cookies',
-        price: '€3.50',
+        price: '€2.80',
         desc: 'Toasty oats, cranberry and orange zest.',
         img: 'cookie-tray.jpg',
         badge: 'Dairy-free'
@@ -122,7 +122,7 @@ export const products = [
     {
         name: 'Pistachio Macarons',
         cat: 'Macarons',
-        price: '€15 / 6',
+        price: '€9 / 6',
         desc: 'Pistachio shells and roasted nut ganache.',
         img: 'macarons-pink.jpg',
         badge: 'Gluten-aware'
@@ -130,7 +130,7 @@ export const products = [
     {
         name: 'Celebration Macaron Box',
         cat: 'Macarons',
-        price: '€28 / 12',
+        price: '€17 / 12',
         desc: 'A painterly mix of our brightest seasonal flavors.',
         img: 'macarons-color.jpg',
         badge: 'Gift-ready'
@@ -138,7 +138,7 @@ export const products = [
     {
         name: 'Summer Fruit Tart',
         cat: 'Seasonal',
-        price: '€34',
+        price: '€28',
         desc: 'Vanilla cream and market fruit on a crisp shell.',
         img: 'tart-fruit.jpg',
         badge: 'Seasonal'
