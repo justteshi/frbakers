@@ -10,8 +10,8 @@
     --white: #fff;
     --line: #eadbd2;
     --shadow: 0 18px 50px rgba(85, 53, 44, .11);
-    --display: var(--font-roboto), Arial, sans-serif;
-    --body: var(--font-roboto), Arial, sans-serif
+    --display: 'DynaPuff', Arial, sans-serif;
+    --body: 'DynaPuff', Arial, sans-serif
 }
 
 * {
@@ -27,7 +27,7 @@ body {
     margin: 0;
     background: var(--cream);
     color: var(--brown);
-    font-family: var(--body);
+    font-family: 'DynaPuff', Arial, sans-serif !important;
     font-size: 16px;
     line-height: 1.7
 }
@@ -44,7 +44,8 @@ a {
 }
 
 button, input, select, textarea {
-    font: inherit;
+    font-family: 'DynaPuff', Arial, sans-serif !important;
+    font-size: inherit;
     color: inherit
 }
 
@@ -59,7 +60,7 @@ h1, h2, h3, p {
 h1, h2, h3 {
     font-family: var(--display);
     line-height: 1.05;
-    font-weight: 400
+    font-weight: 700
 }
 
 h1 {
@@ -143,7 +144,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     display: inline-flex;
     align-items: center;
     gap: .15rem;
-    font: 2rem/1 var(--display);
+    font: 700 2rem/1 var(--display);
     letter-spacing: -.05em;
     white-space: nowrap
 }
@@ -293,6 +294,55 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     border-radius: 2px;
     padding: .25rem .55rem;
     margin-right: .6rem
+}
+
+.hero-equipment {
+    width: fit-content;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(85, 53, 44, .2)
+}
+
+.hero-equipment p {
+    margin: 0 0 .65rem;
+    color: #76564c;
+    font-size: .72rem;
+    font-weight: 800;
+    letter-spacing: .12em;
+    text-transform: uppercase
+}
+
+.hero-equipment > div {
+    display: flex;
+    align-items: center;
+    gap: 1rem
+}
+
+.hero-equipment a {
+    display: flex;
+    align-items: center;
+    min-height: 34px;
+    transition: opacity .2s ease
+}
+
+.hero-equipment a:hover {
+    opacity: .65
+}
+
+.hero-equipment img {
+    width: auto;
+    height: 25px;
+    object-fit: contain;
+    filter: grayscale(1)
+}
+
+.hero-equipment a:first-child img {
+    height: 22px
+}
+
+.hero-equipment span {
+    color: #a98579;
+    font-size: 1.1rem
 }
 
 .hero-visual {
@@ -1450,6 +1500,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
         justify-content: center
     }
 
+    .hero-equipment {
+        margin-left: auto;
+        margin-right: auto
+    }
+
     .hero-copy .lede {
         margin-left: auto;
         margin-right: auto
@@ -1503,11 +1558,13 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 
 @media (max-width: 720px) {
     h1 {
-        font-size: 3.35rem
+        font-size: clamp(2.45rem, 11vw, 3.35rem);
+        overflow-wrap: anywhere
     }
 
     h2 {
-        font-size: 2.55rem
+        font-size: clamp(2rem, 9vw, 2.55rem);
+        overflow-wrap: anywhere
     }
 
     .announcement {
@@ -1532,11 +1589,34 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     }
 
     .hero {
-        padding: 3.5rem 1.1rem 5rem
+        gap: 2.5rem;
+        padding: 3rem 1rem 4rem
+    }
+
+    .hero h1 {
+        margin-bottom: 1rem
+    }
+
+    .hero .button-row {
+        gap: .75rem;
+        margin: 1.5rem 0
+    }
+
+    .hero .button {
+        justify-content: center
+    }
+
+    .hero-equipment {
+        width: 100%
+    }
+
+    .hero-equipment > div {
+        justify-content: center
     }
 
     .hero-visual {
-        padding: 0
+        padding: 0;
+        margin-top: .5rem
     }
 
     .floating-card {
@@ -1566,7 +1646,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     }
 
     .section {
-        padding: 5rem 1rem
+        padding: 4rem 1rem
     }
 
     .section-heading {
@@ -1587,7 +1667,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     }
 
     .love-section {
-        padding: 5rem 1rem
+        padding: 4rem 1rem
     }
 
     .seasonal {
@@ -1616,7 +1696,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     }
 
     .gallery-preview {
-        padding: 5rem 1rem
+        padding: 4rem 1rem
     }
 
     .insta-grid {
@@ -1637,7 +1717,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 
     .footer-bottom {
         flex-direction: column;
-        gap: .7rem
+        align-items: flex-start;
+        gap: .9rem
     }
 
     .footer-bottom a {
@@ -1646,7 +1727,27 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     }
 
     .page-hero {
-        padding: 5rem 1rem
+        padding: 4rem 1rem
+    }
+
+    .page-hero h1 {
+        font-size: clamp(2.4rem, 11vw, 3.35rem)
+    }
+
+    .filters {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        gap: .55rem;
+        margin: 0 -1rem 2.25rem;
+        padding: 0 1rem .6rem;
+        overflow-x: auto;
+        overscroll-behavior-inline: contain;
+        scrollbar-width: thin
+    }
+
+    .filters button {
+        flex: 0 0 auto;
+        min-height: 44px
     }
 
     .menu-grid {
@@ -1663,11 +1764,13 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 
     .custom-callout {
         margin: 1rem 1rem 5rem;
-        padding: 2rem;
+        padding: 1.5rem;
         display: block
     }
 
     .custom-callout .button {
+        justify-content: center;
+        width: 100%;
         margin-top: 1rem
     }
 
@@ -1681,7 +1784,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     }
 
     .about-hero img {
-        height: 450px
+        height: min(115vw, 450px)
     }
 
     .story-chapter {
@@ -1689,7 +1792,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     }
 
     .ingredients img, .founder img {
-        height: 460px
+        height: min(115vw, 460px)
     }
 
     .value-grid {
@@ -1750,6 +1853,18 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
         grid-column: auto
     }
 
+    .form-panel > h2 {
+        font-size: clamp(2rem, 9vw, 2.55rem)
+    }
+
+    .field input, .field select, .field textarea {
+        min-height: 48px
+    }
+
+    .field textarea {
+        min-height: 120px
+    }
+
     .process ol {
         grid-template-columns:1fr 1fr
     }
@@ -1759,7 +1874,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     }
 }
 
-@media (max-width: 430px) {
+@media (max-width: 600px) {
     .benefit-grid, .process ol {
         grid-template-columns:1fr
     }
@@ -1769,15 +1884,26 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     }
 
     .menu-card img {
-        height: 220px
+        height: 230px
     }
 
+    .story-images {
+        padding: 0
+    }
+
+    .story-images img {
+        height: min(125vw, 500px)
+    }
+}
+
+@media (max-width: 430px) {
     .product-img {
-        height: 270px
+        height: 250px
     }
 
     .button-row .button {
-        width: 100%
+        width: 100%;
+        min-height: 48px
     }
 
     .hero-main {
@@ -1786,6 +1912,25 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 
     .floating-card {
         display: none
+    }
+
+    .fresh-badge {
+        right: .75rem;
+        top: .75rem;
+        width: 78px;
+        height: 78px
+    }
+
+    .fresh-badge strong {
+        font-size: .85rem
+    }
+
+    .hero-equipment > div {
+        gap: .7rem
+    }
+
+    .hero-equipment img {
+        height: 22px
     }
 }
 

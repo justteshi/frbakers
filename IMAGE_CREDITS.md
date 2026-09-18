@@ -1,5 +1,10 @@
 # Image credits
 
+## Brand marks
+
+- Ariete logo: Ariete / Wikimedia Commons, used for brand identification.
+- Ninja logo: SharkNinja, used for brand identification.
+
 All photography was downloaded from [Unsplash](https://unsplash.com/) and is stored locally in `public/assets/images/`. Each link below identifies the exact original Unsplash image asset. Use the image ID on Unsplash to locate the contributor profile and current attribution details.
 
 | Local file | Unsplash source |

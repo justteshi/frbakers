@@ -52,6 +52,18 @@ export default function Home() {
                         Menu <ArrowRight/></a><a className="button secondary" href="/contact.html#order-form">Order a
                         Custom Cake</a></div>
                     <div className="mini-note"><span>★ 4.9</span> Loved by 300+ local sweet tooths</div>
+                    <div className="hero-equipment" aria-label="Kitchen equipment brands">
+                        <p>Made with machines we trust</p>
+                        <div>
+                            <a href="https://www.ariete.net/" target="_blank" rel="noreferrer" aria-label="Visit Ariete">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/9/90/Ariete.png" width="296" height="46" alt="Ariete"/>
+                            </a>
+                            <span aria-hidden="true">+</span>
+                            <a href="https://ninjakitchen.eu/" target="_blank" rel="noreferrer" aria-label="Visit Ninja Kitchen">
+                                <img src="https://www.sharkninja.co.uk/on/demandware.static/-/Sites-GB-SharkNinja-Library/default/dw68bd3f1e/footer-social-icon/ninja-logo.svg" width="45" height="21" alt="Ninja"/>
+                            </a>
+                        </div>
+                    </div>
                 </div>
                 <div className="hero-visual">
                     <div className="hero-main"><img src={img('hero.jpg')} width="1400" height="1030"
