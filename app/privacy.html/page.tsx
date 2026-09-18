@@ -1,1 +1,20 @@
-import type { Metadata } from 'next';import { SiteShell } from '../SiteShell';export const metadata:Metadata={title:'Privacy',description:'FrBakers demo website privacy information.',alternates:{canonical:'/privacy.html'}};export default function Privacy(){return <SiteShell active=""><main id="main" className="section legal"><p className="eyebrow">The small print</p><h1>Privacy</h1><p>This is a demonstration website. Newsletter and custom-order forms are processed only in your browser and do not transmit or store personal information.</p><h2>Information entered in forms</h2><p>Form details are used only to demonstrate validation and confirmation states. Refreshing the page clears the information.</p><h2>External links and images</h2><p>Social links lead to the public homepages of those services. Images are stored locally in this project and credited separately.</p><h2>For a live site</h2><p>Before publishing this website for a real business, replace this notice with a policy describing the actual analytics, order handling, storage, processors and customer rights that apply.</p></main></SiteShell>}
+import type {Metadata} from 'next';
+import {SiteShell} from '../SiteShell';
+
+export const metadata: Metadata = {
+    title: 'Privacy',
+    description: 'FrBakers demo website privacy information.',
+    alternates: {canonical: '/privacy.html'}
+};
+export default function Privacy() {
+    return <SiteShell active="">
+        <main id="main" className="section legal"><p className="eyebrow">The small print</p><h1>Privacy</h1><p>This is a
+            demonstration website. Newsletter and custom-order forms are processed only in your browser and do not
+            transmit or store personal information.</p><h2>Information entered in forms</h2><p>Form details are used
+            only to demonstrate validation and confirmation states. Refreshing the page clears the information.</p>
+            <h2>External links and images</h2><p>Social links lead to the public homepages of those services. Images are
+                stored locally in this project and credited separately.</p><h2>For a live site</h2><p>Before publishing
+                this website for a real business, replace this notice with a policy describing the actual analytics,
+                order handling, storage, processors and customer rights that apply.</p></main>
+    </SiteShell>
+}

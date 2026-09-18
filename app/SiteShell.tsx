@@ -1,18 +1,86 @@
 'use client';
-import { useEffect, useRef, useState } from 'react';
-import { Menu, X, Camera, Users, MapPin, Phone, Mail, CakeSlice } from 'lucide-react';
+import {useEffect, useRef, useState} from 'react';
+import {Menu, X, Camera, Users, MapPin, Phone, Mail, CakeSlice} from 'lucide-react';
 
-const links=[['Home','/'],['Menu','/menu.html'],['Our Story','/about.html'],['Gallery','/gallery.html'],['Contact','/contact.html']];
-export function Logo(){return <a className="logo" href="/" aria-label="FrBakers home"><span>Fr</span>Bakers<CakeSlice aria-hidden="true"/></a>}
-export function SiteShell({active,children,announcement=false}:{active:string,children:React.ReactNode,announcement?:boolean}){
- const [open,setOpen]=useState(false); const first=useRef<HTMLAnchorElement>(null);
- useEffect(()=>{ if(open) first.current?.focus();},[open]);
- useEffect(()=>{const fn=(e:KeyboardEvent)=>{if(e.key==='Escape')setOpen(false)};document.addEventListener('keydown',fn);return()=>document.removeEventListener('keydown',fn)},[]);
- return <><a className="skip-link" href="#main">Skip to content</a>{announcement&&<div className="announcement">Freshly baked every morning <span>•</span> Custom cake orders now open</div>}
- <header className="site-header"><div className="nav-wrap"><Logo/><nav className="desktop-nav" aria-label="Primary">{links.map(([label,url])=><a key={url} className={active===label?'active':''} href={url}>{label}</a>)}</nav><a className="button small desktop-order" href="/contact.html#order-form">Order a Cake</a><button className="menu-toggle" aria-expanded={open} aria-controls="mobile-nav" aria-label={open?'Close menu':'Open menu'} onClick={()=>setOpen(!open)}>{open?<X/>:<Menu/>}</button></div>
- <nav id="mobile-nav" className={`mobile-nav ${open?'open':''}`} aria-label="Mobile navigation">{links.map(([label,url],i)=><a ref={i===0?first:undefined} key={url} className={active===label?'active':''} href={url} onClick={()=>setOpen(false)}>{label}</a>)}<a className="button" href="/contact.html#order-form" onClick={()=>setOpen(false)}>Order a Cake</a></nav></header>
- {children}<Footer/></>;
+const links = [['Home', '/'], ['Menu', '/menu.html'], ['Our Story', '/about.html'], ['Gallery', '/gallery.html'], ['Contact', '/contact.html']];
+
+export function Logo() {
+    return <a className="logo" href="/" aria-label="FrBakers home"><span>Fr</span>Bakers<CakeSlice aria-hidden="true"/></a>
 }
-export function Newsletter({compact=false}:{compact?:boolean}){const [done,setDone]=useState(false);return <form className={`newsletter-form ${compact?'compact':''}`} onSubmit={e=>{e.preventDefault();setDone(true)}}>{done?<p className="success" role="status">You’re on the sweet list — welcome!</p>:<><label className="sr-only" htmlFor={compact?'footer-email':'email'}>Email address</label><input id={compact?'footer-email':'email'} type="email" required placeholder="you@example.com"/><button className="button" type="submit">Join the Sweet List</button></>}</form>}
-function Footer(){return <footer className="footer"><div className="footer-grid"><div><Logo/><p>Little bites of happiness,<br/>baked fresh every day.</p><div className="socials"><a href="https://www.instagram.com/" aria-label="Instagram"><Camera/></a><a href="https://www.facebook.com/" aria-label="Facebook"><Users/></a><a href="https://www.pinterest.com/" aria-label="Pinterest"><span className="pin">P</span></a></div></div><div><h3>Come say hello</h3><p><MapPin/> 18 Rosewood Lane<br/>Maplewood, NY 10001</p><p><Phone/> (212) 555-0148<br/><Mail/> hello@frbakers.example</p></div><div><h3>Bakery hours</h3><p>Tue–Fri: 7am–6pm<br/>Sat: 8am–5pm<br/>Sun: 8am–2pm<br/>Monday: closed</p></div><div><h3>A little sweetness</h3><p>Seasonal bakes, studio notes, and first dibs.</p><Newsletter compact/></div></div><div className="footer-bottom"><span>© <CurrentYear/> FrBakers. Made with butter & joy.</span><span><a href="/privacy.html">Privacy</a><a href="/accessibility.html">Accessibility</a></span></div></footer>}
-function CurrentYear(){const [year,setYear]=useState(new Date().getFullYear());useEffect(()=>setYear(new Date().getFullYear()),[]);return <>{year}</>}
+
+export function SiteShell({active, children, announcement = false}: {
+    active: string,
+    children: React.ReactNode,
+    announcement?: boolean
+}) {
+    const [open, setOpen] = useState(false);
+    const first = useRef<HTMLAnchorElement>(null);
+    useEffect(() => {
+        if (open) first.current?.focus();
+    }, [open]);
+    useEffect(() => {
+        const fn = (e: KeyboardEvent) => {
+            if (e.key === 'Escape') setOpen(false)
+        };
+        document.addEventListener('keydown', fn);
+        return () => document.removeEventListener('keydown', fn)
+    }, []);
+    return <><a className="skip-link" href="#main">Skip to content</a>{announcement &&
+        <div className="announcement">Freshly baked every morning <span>•</span> Custom cake orders now open</div>}
+        <header className="site-header">
+            <div className="nav-wrap"><Logo/>
+                <nav className="desktop-nav" aria-label="Primary">{links.map(([label, url]) => <a key={url}
+                                                                                                  className={active === label ? 'active' : ''}
+                                                                                                  href={url}>{label}</a>)}</nav>
+                <a className="button small desktop-order" href="/contact.html#order-form">Order a Cake</a>
+                <button className="menu-toggle" aria-expanded={open} aria-controls="mobile-nav"
+                        aria-label={open ? 'Close menu' : 'Open menu'} onClick={() => setOpen(!open)}>{open ? <X/> :
+                    <Menu/>}</button>
+            </div>
+            <nav id="mobile-nav" className={`mobile-nav ${open ? 'open' : ''}`}
+                 aria-label="Mobile navigation">{links.map(([label, url], i) => <a ref={i === 0 ? first : undefined}
+                                                                                   key={url}
+                                                                                   className={active === label ? 'active' : ''}
+                                                                                   href={url}
+                                                                                   onClick={() => setOpen(false)}>{label}</a>)}<a
+                className="button" href="/contact.html#order-form" onClick={() => setOpen(false)}>Order a Cake</a></nav>
+        </header>
+        {children}<Footer/></>;
+}
+
+export function Newsletter({compact = false}: { compact?: boolean }) {
+    const [done, setDone] = useState(false);
+    return <form className={`newsletter-form ${compact ? 'compact' : ''}`} onSubmit={e => {
+        e.preventDefault();
+        setDone(true)
+    }}>{done ? <p className="success" role="status">You’re on the sweet list — welcome!</p> : <><label
+        className="sr-only" htmlFor={compact ? 'footer-email' : 'email'}>Email address</label><input
+        id={compact ? 'footer-email' : 'email'} type="email" required placeholder="you@example.com"/>
+        <button className="button" type="submit">Join the Sweet List</button>
+    </>}</form>
+}
+
+function Footer() {
+    return <footer className="footer">
+        <div className="footer-grid">
+            <div><Logo/><p>Little bites of happiness,<br/>baked fresh every day.</p>
+                <div className="socials"><a href="https://www.instagram.com/" aria-label="Instagram"><Camera/></a><a
+                    href="https://www.facebook.com/" aria-label="Facebook"><Users/></a><a
+                    href="https://www.pinterest.com/" aria-label="Pinterest"><span className="pin">P</span></a></div>
+            </div>
+            <div><h3>Come say hello</h3><p><MapPin/> 18 Rosewood Lane<br/>Maplewood, NY 10001</p><p><Phone/> (212)
+                555-0148<br/><Mail/> hello@frbakers.example</p></div>
+            <div><h3>Bakery hours</h3><p>Tue–Fri: 7am–6pm<br/>Sat: 8am–5pm<br/>Sun: 8am–2pm<br/>Monday: closed</p></div>
+            <div><h3>A little sweetness</h3><p>Seasonal bakes, studio notes, and first dibs.</p><Newsletter compact/>
+            </div>
+        </div>
+        <div className="footer-bottom"><span>© <CurrentYear/> FrBakers. Made with butter & joy.</span><span><a
+            href="/privacy.html">Privacy</a><a href="/accessibility.html">Accessibility</a></span></div>
+    </footer>
+}
+
+function CurrentYear() {
+    const [year, setYear] = useState(new Date().getFullYear());
+    useEffect(() => setYear(new Date().getFullYear()), []);
+    return <>{year}</>
+}
