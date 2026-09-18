@@ -18,7 +18,7 @@ export default function Home() {
         "@type": "Bakery",
         name: "FrBakers",
         description: "Warm, modern artisan bakery specializing in cakes, pastries and handcrafted desserts.",
-        url: "https://frbakers.example.com",
+        url: "https://www.frbakers.site",
         telephone: "+1-212-555-0148",
         email: "hello@frbakers.example",
         address: {

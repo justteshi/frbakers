@@ -10,8 +10,8 @@
     --white: #fff;
     --line: #eadbd2;
     --shadow: 0 18px 50px rgba(85, 53, 44, .11);
-    --display: var(--font-display), Georgia, serif;
-    --body: var(--font-body), Arial, sans-serif
+    --display: var(--font-roboto), Arial, sans-serif;
+    --body: var(--font-roboto), Arial, sans-serif
 }
 
 * {
